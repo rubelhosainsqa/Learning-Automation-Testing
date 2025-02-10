@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="6" time="0.180" timestamp="2025-02-06T22:25:13.130722+06:00" hostname="DESKTOP-AFB8S3I"><testcase classname="PyTest.test_assertions_in_python_2" name="test_1" time="0.001" /><testcase classname="PyTest.test_assertions_in_python_2" name="test_2" time="0.001"><failure message="AssertionError: If assertion is failed then it will be displayed&#10;assert 10 == 11">def test_2():
+        a = 10
+        b = 11
+&gt;       assert a==b, "If assertion is failed then it will be displayed"
+E       AssertionError: If assertion is failed then it will be displayed
+E       assert 10 == 11
+
+PyTest\test_assertions_in_python_2.py:9: AssertionError</failure></testcase><testcase classname="PyTest.test_assertions_in_python_2" name="test_3" time="0.001"><failure message="AssertionError: assert False&#10; +  where False = &lt;method-wrapper '__eq__' of str object at 0x000001C31824B240&gt;('Riyon')&#10; +    where &lt;method-wrapper '__eq__' of str object at 0x000001C31824B240&gt; = 'Rubel'.__eq__">def test_3():
+        a = "Rubel"
+        b = "Riyon"
+&gt;       assert a.__eq__(b)
+E       AssertionError: assert False
+E        +  where False = &lt;method-wrapper '__eq__' of str object at 0x000001C31824B240&gt;('Riyon')
+E        +    where &lt;method-wrapper '__eq__' of str object at 0x000001C31824B240&gt; = 'Rubel'.__eq__
+
+PyTest\test_assertions_in_python_2.py:14: AssertionError</failure></testcase><testcase classname="PyTest.test_sample_file_1" name="test_sample_one" time="0.001" /><testcase classname="PyTest.test_sample_file_1" name="test_sample_two" time="0.001" /><testcase classname="PyTest.test_sample_file_1" name="test_sample_three" time="0.001" /></testsuite></testsuites>
