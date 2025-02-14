@@ -1,9 +1,24 @@
 import pytest
 from selenium import webdriver
 
-@pytest.fixture()
+def pytest_addoption(parser):
+    parser.addoption("--browser")
+
+
+@pytest.fixture(params=["chrome","firefox","edge"])
 def setup_and_teardown(request):
-    driver = webdriver.Chrome()
+    global driver
+    browser = request.config.getoption("--browser")
+
+    if browser == "chrome":
+        driver = webdriver.Chrome()
+
+    elif browser == "firefox":
+        driver = webdriver.Firefox()
+
+    elif browser == "edge":
+        driver = webdriver.Edge()
+
     driver.maximize_window()
     driver.get("https://tutorialsninja.com/demo/")
     request.cls.driver = driver
